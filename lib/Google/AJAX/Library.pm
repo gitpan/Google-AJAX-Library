@@ -1,6 +1,6 @@
 package Google::AJAX::Library;
 BEGIN {
-  $Google::AJAX::Library::VERSION = '0.021';
+  $Google::AJAX::Library::VERSION = '0.022';
 }
 # ABSTRACT: Access the Google AJAX Libaries API in Perl
 
@@ -33,7 +33,6 @@ has file => qw/is ro/;
 has name => qw/is ro/;
 has ua => qw/is ro required 1 lazy 1 isa LWP::UserAgent/, default => sub {
     my $ua = LWP::UserAgent->new;
-    
     $ua->agent("Google::AJAX::Library/$Google::AJAX::Library::VERSION (" . $ua->agent . ")");
     return $ua;
 };
@@ -150,7 +149,7 @@ sub _name_file {
 
 sub exists {
     my $self = shift;
-    return $self->ua->head($self->uri)->is_success ? 1 : 0;
+    return $self->ua->head( $self->uri )->is_success ? 1 : 0;
 }
 
 
@@ -218,7 +217,7 @@ Google::AJAX::Library - Access the Google AJAX Libaries API in Perl
 
 =head1 VERSION
 
-version 0.021
+version 0.022
 
 =head1 SYNOPSIS
 

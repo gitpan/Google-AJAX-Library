@@ -24,7 +24,7 @@ my %WriteMakefileArgs = (
                                            },
                        'ABSTRACT' => 'Access the Google AJAX Libaries API in Perl',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.021',
+                       'VERSION' => '0.022',
                        'PREREQ_PM' => {
                                         'HTML::Declare' => '0',
                                         'URI' => '0',
